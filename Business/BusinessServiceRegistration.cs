@@ -16,7 +16,7 @@ namespace Business
         {
 
             services.AddScoped<ICategoryService, CategoryManager>();
-            services.AddScoped<ICourseService, CourseManager>();
+            services.AddScoped<ICourseService, CourseManager>(); 
 
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
