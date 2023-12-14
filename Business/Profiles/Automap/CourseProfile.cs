@@ -16,11 +16,15 @@ namespace Business.Profiles.Automap
     {
         public CourseProfile()
         {
-            CreateMap<CreateCourseRequest, Course>();
-            CreateMap<Course, CreatedCourseResponse>();
+            CreateMap<IPaginate<Course>, IPaginate<GetListCourseResponse>>().ReverseMap();
 
-            CreateMap<Course, GetListCourseResponse>().ReverseMap();
-            CreateMap<Paginate<Course>, Paginate<GetListCourseResponse>>().ReverseMap();
+            CreateMap<Course, CreateCourseRequest>().ReverseMap();
+            CreateMap<Course, DeleteCourseRequest>().ReverseMap();
+            CreateMap<Course, UpdateCourseRequest>().ReverseMap();
+
+            CreateMap<Course, CreatedCourseResponse>().ReverseMap();
+            CreateMap<Course, DeletedCourseResponse>().ReverseMap();
+            CreateMap<Course, UpdatedCourseResponse>().ReverseMap();
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Business.Abstracts;
 using Business.Concretes;
+using Business.Rules;
 
 namespace Business
 {
@@ -14,11 +15,14 @@ namespace Business
     {
         public static IServiceCollection AddBusinessServices(this IServiceCollection services)
         {
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             services.AddScoped<ICategoryService, CategoryManager>();
-            services.AddScoped<ICourseService, CourseManager>(); 
+            services.AddScoped<ICourseService, CourseManager>();
 
-            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddScoped<CategoryBusinessRules>();
+            services.AddScoped<CourseBusinessRules>();
+
 
             return services;
         }
