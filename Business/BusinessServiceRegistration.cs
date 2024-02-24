@@ -19,6 +19,8 @@ namespace Business
 
             services.AddScoped<ICategoryService, CategoryManager>();
             services.AddScoped<ICourseService, CourseManager>();
+            services.AddScoped<ICoursesOfInstructorService, CoursesOfInstructorManager>();
+            services.AddScoped<IInstructorService, InstructorManager>();
 
             services.AddScoped<CategoryBusinessRules>();
             services.AddScoped<CourseBusinessRules>();

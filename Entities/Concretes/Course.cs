@@ -13,5 +13,7 @@ public class Course:Entity<Guid>
     public string CourseName { get; set; }
     public string Description { get; set; }
     public Category Category { get; set; }
+    public List<CoursesOfInstructor> CoursesOfInstructors { get; set; }
+
 
 }
