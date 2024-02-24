@@ -8,6 +8,9 @@ namespace Business.Dtos.Responses
 {
     public class GetListCoursesOfInstructorResponse
     {
+        public Guid Id { get; set; }
+        public Guid CourseId { get; set; }
+        public Guid InstructorId { get; set; }
     }
 
 }
